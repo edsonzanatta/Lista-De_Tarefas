@@ -66,12 +66,34 @@ function addTask() {
 }
 
 // Função para remover uma tarefa
+/**
+ * Remove uma tarefa após pedir confirmação ao usuário.
+ * @param {number} index - A posição da tarefa a ser removida.
+ */
 function removeTask(index) {
-    // Remove 1 item a partir do 'index' do array
-    tasks.splice(index, 1);
-    saveTasks();
-    renderTasks();
+    // Pega o texto da tarefa que será excluída para usar na mensagem.
+    const taskText = tasks[index];
+
+    // Cria a mensagem de confirmação, incluindo um emoji de alerta.
+    const confirmationMessage = `🤔 Tem certeza que deseja remover a tarefa: "${taskText}"?`;
+
+    // Exibe a caixa de diálogo de confirmação.
+    // O código dentro do 'if' só será executado se o usuário clicar em "OK".
+    if (confirm(confirmationMessage)) {
+        // Se o usuário confirmou (clicou em "OK"):
+        
+        // Remove 1 item a partir do 'index' do array.
+        tasks.splice(index, 1);
+        
+        // Salva o novo estado do array no localStorage.
+        saveTasks();
+        
+        // Redesenha a lista na tela para refletir a remoção.
+        renderTasks();
+    }
+    // Se o usuário clicar em "Cancelar", nada acontece e a função termina.
 }
+
 
 // Função para editar uma tarefa
 function editTask(index) {
