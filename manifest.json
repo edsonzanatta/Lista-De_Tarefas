@@ -1,11 +1,11 @@
 {
-  "name": "Minha Lista de Tarefas",
+  "name": "Lista de Tarefas Pessoal",
   "short_name": "Tarefas",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3367D6",
-  "description": "Um simples aplicativo de lista de tarefas.",
+  "description": "Aplicativo de lista de tarefas.",
   "icons": [
     {
       "src": "images/icon-48.png",
