@@ -7,15 +7,14 @@
     
     <!-- Link para o arquivo de estilos CSS -->
     <link rel="stylesheet" href="style.css">
-    
     <!-- Link para o arquivo Manifest (essencial para PWA) -->
     <link rel="manifest" href="manifest.json">
 
     <!-- Ícones para diferentes dispositivos (opcional, mas bom para PWA) -->
-    <link rel="apple-touch-icon" href="images/icon-96.png">
+    <link rel="apple-touch-icon" href="icon-96.png">
 	
 	 <!-- LINHA ADICIONADA: O FAVICON ESPECÍFICO PARA A GUIA DO NAVEGADOR -->
-    <link rel="icon" href="images/icon-48.png" type="image/png">
+    <link rel="icon" href="icon-48.png" type="image/png">
 	
     <meta name="theme-color" content="#3367D6"/>
 </head>
@@ -39,5 +38,21 @@
 
     <!-- Link para o arquivo JavaScript (sempre no final do body) -->
     <script src="script.js"></script>
+	
+	<!-- Script para registrar o Service Worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").then(
+            function (registration) {
+              console.log("ServiceWorker registrado com sucesso no escopo: ", registration.scope);
+            },
+            function (err) {
+              console.log("ServiceWorker falhou no registro: ", err);
+            }
+          );
+        });
+      }
+    </script>
 </body>
 </html>
