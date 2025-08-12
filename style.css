@@ -84,3 +84,25 @@ h1 {
     font-size: 18px;
     margin-left: 10px;
 }
+
+/* Estilos para o Footer Fixo */
+.app-footer {
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha na esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    background-color: #1B4F72; /* Cor de fundo em destaque (azul escuro da sua paleta) */
+    color: #FFFFFF; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+/* Ajuste para o conteúdo principal não ficar escondido atrás do footer */
+body {
+    padding-bottom: 50px; /* Adiciona um padding na parte inferior do body igual à altura do footer */
+}
+

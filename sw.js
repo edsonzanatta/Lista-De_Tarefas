@@ -5,8 +5,8 @@ const urlsToCache = [
   '/style.css',
   '/script.js',
   '/manifest.json',
-  '/icon-48.png', // Certifique-se de que este caminho está correto
-  '/icon-96.png'  // Certifique-se de que este caminho está correto
+  '/icon-48.png', 
+  '/icon-96.png' 
 ];
 
 // Instalação do Service Worker e cache dos arquivos
@@ -45,7 +45,6 @@ self.addEventListener('fetch', event => {
         });
       })
       .catch(() => {
-        // Se a requisição falhar (offline) e não estiver no cache, pode retornar uma página offline
         // return caches.match('/offline.html'); // Exemplo: se você tiver uma página offline
       })
   );
